@@ -25,13 +25,14 @@ echo '{
 npm install express --save-dev
 
 #set up nginx so that node can redirect from port 3000 to port 80
+echo "*** set up nginx ***"
 yum install nginx -y
 ../../../etc/init.d/nginx start
 sed -i '50i             proxy_pass http://127.0.0.1:3000;' ../../../etc/nginx/nginx.conf 
-sudo service nginx restart
-#node index.js
+service nginx restart
 
 #use pm2 to keep node server running in the background
+echo "*** install pm2 to keep server running ***"
 npm i -g pm2
 pm2 start index.js --name "LSDSD lab0"
 pm2 startup | bash
