@@ -24,11 +24,11 @@ echo '{
 }' > package.json
 npm install express --save-dev
 echo "***user script completed***"
-node index.js
 yum install nginx -y
 ../../../etc/init.d/nginx start
 sed -i '66i             proxy_pass http://127.0.0.1:3000;' ../../etc/nginx/nginx.conf 
 sudo service nginx restart
+node index.js
 
 #npm i -g pm2
 #pm2 start index.js --name "LSDSD lab0"
