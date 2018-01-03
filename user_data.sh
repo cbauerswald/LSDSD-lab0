@@ -24,7 +24,11 @@ echo '{
 }' > package.json
 npm install express --save-dev
 echo "***user script completed***"
-npm i -g pm2
-pm2 start index.js --name "LSDSD lab0"
-pm2 startup
-pm2 save
+node index.js
+
+#yum install nginx -y
+
+#npm i -g pm2
+#pm2 start index.js --name "LSDSD lab0"
+#pm2 startup
+#pm2 save
