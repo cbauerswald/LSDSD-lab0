@@ -1,9 +1,9 @@
 #!/bin/bash
-
-echo "in the script"
 curl --silent --location https://rpm.nodesource.com/setup_9.x | sudo bash -
 sudo yum -y install nodejs
-echo "***node installation complete***"
+
+#create node app
+echo "***create node app***"
 mkdir home/ec2-user/server
 cd home/ec2-user/server
 echo "const express = require('express')" > index.js
@@ -23,14 +23,16 @@ echo '{
   "license": "ISC"
 }' > package.json
 npm install express --save-dev
-echo "***user script completed***"
+
+#set up nginx so that node can redirect from port 3000 to port 80
 yum install nginx -y
 ../../../etc/init.d/nginx start
 sed -i '50i             proxy_pass http://127.0.0.1:3000;' ../../../etc/nginx/nginx.conf 
 sudo service nginx restart
-node index.js
+#node index.js
 
-#npm i -g pm2
-#pm2 start index.js --name "LSDSD lab0"
-#pm2 startup
-#pm2 save
+#use pm2 to keep node server running in the background
+npm i -g pm2
+pm2 start index.js --name "LSDSD lab0"
+pm2 startup | bash
+pm2 save
