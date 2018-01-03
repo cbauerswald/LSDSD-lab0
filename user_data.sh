@@ -9,7 +9,7 @@ cd home/ec2-user/server
 echo "const express = require('express')" > index.js
 echo "const app = express()" >> index.js
 echo "app.get('/', (req, res) => {" >> index.js
-echo "res.send('ccb') })" >> index.js
+echo "res.send('Cecelia A. AMI ID user script') })" >> index.js
 echo "app.listen(3000, () => console.log('Server running on port 3000'))" >> index.js
 echo '{
   "name": "test",
