@@ -26,7 +26,7 @@ npm install express --save-dev
 echo "***user script completed***"
 yum install nginx -y
 ../../../etc/init.d/nginx start
-sed -i '66i             proxy_pass http://127.0.0.1:3000;' ../../etc/nginx/nginx.conf 
+sed -i '66i             proxy_pass http://127.0.0.1:3000;' ../../../etc/nginx/nginx.conf 
 sudo service nginx restart
 node index.js
 
