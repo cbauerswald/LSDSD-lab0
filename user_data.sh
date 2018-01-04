@@ -9,7 +9,7 @@ cd home/ec2-user/server
 echo "const express = require('express')" > index.js
 echo "const app = express()" >> index.js
 echo "app.get('/', (req, res) => {" >> index.js
-echo "res.send('Cecelia A. <br> AMI ID: ami-f7ebc092 <br> User Data <br> <code> #!/bin/bash <br> yum install git -y <br> git clone  https://github.com/cbauerswald/LSDSD-lab0.git <br> chmod 777 LSDSD-lab0/user_data.sh <br> echo LSDSD-lab0/user_data.sh | bash </code> <br> <br> more at https://github.com/cbauerswald/LSDSD-lab0/blob/master/user_data_base.sh') })" >> index.js
+echo "res.send('Cecelia A. <br> AMI ID: ami-6be9c20e <br> User Data <br> <code> #!/bin/bash <br> yum install git -y <br> git clone  https://github.com/cbauerswald/LSDSD-lab0.git <br> cd LSDSD-lab0 <br> git stash <br> git pull origin master <br> chmod 777 user_data.sh <br> ./user_data.sh <br> </code> <br> <br> more at https://github.com/cbauerswald/LSDSD-lab0/blob/master/user_data_base.sh') })" >> index.js
 echo "app.listen(3000, () => console.log('Server running on port 3000'))" >> index.js
 echo '{
   "name": "test",
