@@ -33,7 +33,7 @@ service nginx restart
 
 #use pm2 to keep node server running in the background
 echo "*** install pm2 to keep server running ***"
-npm i -g pm2
+npm i -g pm2 -y
 echo "*** PM2 INSTALLED ***"
 pm2 start index.js --name "LSDSDlab0"
 echo "*** PM2 STARTED ***"
